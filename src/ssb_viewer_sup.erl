@@ -28,7 +28,15 @@ start_link() ->
 
 %% Child :: {Id,StartFunc,Restart,Shutdown,Type,Modules}
 init([]) ->
-    {ok, { {one_for_all, 0, 1}, []} }.
+    ElliSpec = #{
+      id => ssb_viewer_server,
+      start => {elli, start_link, [[{callback, ssb_viewer_server}, {port, 3000}]]},
+      restart => permanent,
+      shutdown => 5000,
+      type => worker,
+      modules => [elli]
+    },
+    {ok, { {one_for_all, 0, 1}, [ElliSpec]} }.
 
 %%====================================================================
 %% Internal functions
