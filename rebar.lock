@@ -1,5 +1,13 @@
 {"1.1.0",
-[{<<"elli">>,{pkg,<<"elli">>,<<"3.1.0">>},0}]}.
+[{<<"elli">>,{pkg,<<"elli">>,<<"3.1.0">>},0},
+ {<<"enacl">>,
+  {git,"https://github.com/jlouis/enacl",
+       {ref,"c8403ab198b80863479c2ab5a9ccd0a8d73a57c4"}},
+  0},
+ {<<"libsodium">>,
+  {git,"git://github.com/potatosalad/erlang-libsodium.git",
+       {ref,"aacf353461c27fc8732f69ecfcf1aaed9d81d366"}},
+  0}]}.
 [
 {pkg_hash,[
  {<<"elli">>, <<"3B0C46B549BAC00DB06FF79A87B69A7FE06F3B24E7E06858FF6CCD9654276785">>}]}
