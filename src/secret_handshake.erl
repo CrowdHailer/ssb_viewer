@@ -16,7 +16,7 @@ verify_hello(<<HMAC:32/binary, PeerEphemeral:32/binary>>, NetworkIdentifier) ->
   end.
 
 shared_ab(PeerPublicKey, {_, <<LHS:32/binary, RHS:32/binary>>}) ->
-  libsodium_crypto_scalarmult:crypto_scalarmult(RHS, PeerPublicKey).
+  libsodium_crypto_scalarmult:crypto_scalarmult(LHS, PeerPublicKey).
 
 
 run_test() ->
